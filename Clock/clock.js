@@ -1,5 +1,5 @@
 const myClockElement = document.getElementById('myClock');
-const myNameElement = document.getElementById('myClock');
+const myNameElement = document.getElementById('myName');
 
 
 function showTime() {
