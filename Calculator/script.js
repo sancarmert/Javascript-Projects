@@ -53,7 +53,6 @@ function modulo() {
     }
 }
 
-// Klavyeden tuşlara tepki verme
 document.addEventListener('keydown', function(event) {
     const key = event.key;
     if (/[0-9+\-*/.^%]/.test(key)) {
