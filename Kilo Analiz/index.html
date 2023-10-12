@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vücut Kitle Endeksi Hesaplama</title>
+    <script>
+        function hesaplaVKI() {
+            var boy = parseFloat(document.getElementById("boy").value);
+            var kilo = parseFloat(document.getElementById("kilo").value);
+            var cinsiyet = document.querySelector('input[name="cinsiyet"]:checked').value;
+
+            if (!boy || !kilo) {
+                alert("Lütfen geçerli boy ve kilo değerleri girin.");
+                return;
+            }
+
+            var vki = kilo / (boy * boy);
+
+            var sonuc = "";
+            if (cinsiyet === "bay") {
+                sonuc = "Vücut Kitle Endeksiniz (VKİ): " + vki.toFixed(2);
+            } else {
+                sonuc = "Vücut Kitle Endeksiniz (VKİ): " + vki.toFixed(2);
+            }
+
+            document.getElementById("sonuc").innerHTML = sonuc;
+        }
+    </script>
+</head>
+<body>
+    <h1>Vücut Kitle Endeksi Hesaplama</h1>
+    <form>
+        <label for="boy">Boy (cm cinsinden):</label>
+        <input type="number" id="boy" step="0.01" placeholder="Örnek: 1.75" required><br><br>
+
+        <label for="kilo">Kilo (kg cinsinden):</label>
+        <input type="number" id="kilo" step="0.01" placeholder="Örnek: 70" required><br><br>
+
+        <label>Cinsiyet:</label>
+        <input type="radio" name="cinsiyet" value="bay" required> Bay
+        <input type="radio" name="cinsiyet" value="bayan" required> Bayan<br><br>
+
+        <button type="button" onclick="hesaplaVKI()">VKİ Hesapla</button>
+    </form>
+
+    <div id="sonuc"></div>
+</body>
+</html>
